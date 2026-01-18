@@ -15,7 +15,7 @@ export default function About() {
       <section className="bg-primary/20 py-16">
         <div className="section-container">
           <h1 className="text-4xl md:text-5xl font-bold text-center mb-8 text-neutral">
-            About {garden.name}
+            <span className="text-3xl md:text-4xl">About</span> <span style={{ fontFamily: 'var(--font-dancing-script)' }}>JC's</span> <span className="text-3xl md:text-4xl">Backyard</span>
           </h1>
         </div>
       </section>
@@ -28,9 +28,9 @@ export default function About() {
               Our Story
             </h2>
             <p className="text-lg text-neutral/80 leading-relaxed mb-6">
-              Founded in {garden.founded}, {garden.name} began as a vision to bring the community together 
+              <span className="text-base">Founded in {garden.founded},</span> <span style={{ fontFamily: 'var(--font-dancing-script)' }}>JC's</span> <span className="text-base">Backyard began as a vision to bring the community together 
               through the shared joy of growing food. What started as a small backyard garden has grown 
-              into a thriving community resource dedicated to education, sustainability, and connection.
+              into a thriving community resource dedicated to education, sustainability, and connection.</span>
             </p>
             <p className="text-lg text-neutral/80 leading-relaxed mb-6">
               We believe that everyone should have access to fresh, healthy food and the knowledge to 
