@@ -1,0 +1,293 @@
+{
+  "garden": {
+    "name": "JC's Backyard",
+    "tagline": "Inspiring others to grow their own food and engage in their community by sharing food and knowledge",
+    "description": "A community-focused garden dedicated to educating people on how food is grown, fostering sustainable practices, and building connections through shared knowledge and fresh produce.",
+    "mission": "To inspire and empower our community to grow their own food, share resources, and create a more sustainable, connected neighborhood.",
+    "founded": "2023",
+    "location": {
+      "address": "Kansas City, Missouri",
+      "fullAddress": "Kansas City, MO 64108",
+      "region": "Greater Kansas City Area"
+    },
+    "contact": {
+      "email": "info@jcsbackyard.org",
+      "phone": "(816) 555-0123"
+    },
+    "hours": {
+      "public": "Open to visitors: Saturday 9 AM - 1 PM, Sunday 10 AM - 2 PM",
+      "volunteer": "Volunteer days: Every Wednesday 6 PM - 8 PM and Saturday 8 AM - 12 PM",
+      "tours": "Guided tours available by appointment"
+    },
+    "theme": {
+      "name": "Rustic and Earthy",
+      "description": "A warm, welcoming atmosphere that connects visitors to the earth and community",
+      "colors": {
+        "primary": "#90EE90",
+        "primaryName": "Spring Green",
+        "accent1": "#FFBF00",
+        "accent1Name": "Amber",
+        "accent2": "#B8336A",
+        "accent2Name": "American Rose",
+        "neutral": "#3D3D3D",
+        "neutralLight": "#F5F5DC"
+      }
+    },
+    "features": {
+      "educational": true,
+      "communitySharing": true,
+      "organicPractices": true,
+      "composting": true,
+      "seedLibrary": true,
+      "workshops": true,
+      "volunteerProgram": true
+    },
+    "programs": [
+      {
+        "name": "Growing Guides Workshops",
+        "description": "Learn the fundamentals of growing vegetables, fruits, and herbs through hands-on workshops",
+        "frequency": "Monthly"
+      },
+      {
+        "name": "Community Garden Days",
+        "description": "Join us for shared work days where we maintain the garden together and share harvests",
+        "frequency": "Weekly"
+      },
+      {
+        "name": "Seed Sharing Library",
+        "description": "Borrow seeds to start your own garden and contribute seeds back for others",
+        "frequency": "Year-round"
+      },
+      {
+        "name": "School Visits",
+        "description": "Educational tours and activities for school groups to learn about sustainable food production",
+        "frequency": "By appointment"
+      },
+      {
+        "name": "Composting Demonstrations",
+        "description": "Learn how to create nutrient-rich soil through composting",
+        "frequency": "Seasonal"
+      }
+    ],
+    "inspiration": {
+      "competitor": "Kansas City Community Gardens (KCCG)",
+      "notes": "A large, well-established organization that serves as inspiration for community impact and educational programming"
+    },
+    "priorities": [
+      "Encouragement to garden",
+      "Community sharing",
+      "Knowledge transfer",
+      "Sustainable practices",
+      "Building connections"
+    ],
+    "avoid": "Nothing - open to all creative approaches",
+    "interactivePreferences": "Clean, neat, a bit modern - user-friendly interfaces that enhance the educational experience"
+  },
+  "educationalContent": {
+    "vegetables": [
+      {
+        "name": "Tomatoes",
+        "season": "Late Spring - Early Fall",
+        "tips": [
+          "Start seeds indoors 6-8 weeks before last frost",
+          "Transplant after danger of frost has passed",
+          "Provide consistent watering at the base (avoid leaves)",
+          "Use stakes or cages for support",
+          "Harvest when fully colored but still firm"
+        ],
+        "commonMistakes": [
+          "Planting too early (cold soil stunts growth)",
+          "Inconsistent watering (causes blossom end rot)",
+          "Overcrowding plants (reduces air circulation)"
+        ]
+      },
+      {
+        "name": "Leafy Greens (Lettuce, Spinach, Kale)",
+        "season": "Early Spring - Late Fall (with shade in summer)",
+        "tips": [
+          "Can be grown in partial shade during hot months",
+          "Succession plant every 2-3 weeks for continuous harvest",
+          "Harvest outer leaves first to allow center to keep growing",
+          "Prefer cooler temperatures for best flavor"
+        ],
+        "commonMistakes": [
+          "Planting in full sun during summer heat",
+          "Waiting too long to harvest (becomes bitter)",
+          "Not thinning seedlings (results in small, weak plants)"
+        ]
+      },
+      {
+        "name": "Peppers",
+        "season": "Late Spring - Early Fall",
+        "tips": [
+          "Start seeds indoors 8-10 weeks before last frost",
+          "Peppers love heat - wait for soil to warm up",
+          "Use mulch to retain moisture and warmth",
+          "Fertilize lightly when flowers appear"
+        ],
+        "commonMistakes": [
+          "Planting too early in cold soil",
+          "Over-fertilizing (more leaves, fewer fruits)",
+          "Not providing enough warmth"
+        ]
+      }
+    ],
+    "herbs": [
+      {
+        "name": "Basil",
+        "season": "Late Spring - Early Fall",
+        "tips": [
+          "Pinch flowers to encourage leaf growth",
+          "Harvest from the top to promote bushiness",
+          "Grows well in containers",
+          "Water at base, keep leaves dry"
+        ],
+        "commonMistakes": [
+          "Letting it flower (reduces leaf production)",
+          "Over-watering (causes root rot)"
+        ]
+      },
+      {
+        "name": "Mint",
+        "season": "Spring - Fall",
+        "tips": [
+          "Best grown in containers (spreads aggressively)",
+          "Prefers partial shade in hot climates",
+          "Harvest regularly to encourage new growth",
+          "Great for beginners - very hardy"
+        ],
+        "commonMistakes": [
+          "Planting directly in ground without containment",
+          "Not harvesting enough (becomes woody)"
+        ]
+      }
+    ],
+    "fruits": [
+      {
+        "name": "Strawberries",
+        "season": "Spring - Early Summer",
+        "tips": [
+          "Plant in early spring or late fall",
+          "Mulch around plants to keep berries clean",
+          "Provide good drainage",
+          "Remove runners in first year for better fruit production"
+        ],
+        "commonMistakes": [
+          "Planting too deep (crown should be at soil level)",
+          "Not providing enough water during fruit development"
+        ]
+      }
+    ],
+    "soilHealth": {
+      "title": "Building Healthy Soil",
+      "topics": [
+        {
+          "name": "Composting Basics",
+          "description": "Transform kitchen scraps and yard waste into nutrient-rich compost. Mix brown materials (leaves, paper) with green materials (food scraps, grass) in a 3:1 ratio. Turn regularly and keep moist."
+        },
+        {
+          "name": "Soil Testing",
+          "description": "Test your soil pH and nutrients annually. Most vegetables prefer slightly acidic soil (pH 6.0-7.0). Amend based on test results."
+        },
+        {
+          "name": "Mulching",
+          "description": "Apply organic mulch (straw, leaves, wood chips) to retain moisture, suppress weeds, and gradually improve soil as it decomposes."
+        }
+      ]
+    },
+    "seasonalTips": {
+      "spring": [
+        "Start seeds indoors for warm-season crops",
+        "Prepare garden beds with compost",
+        "Plant cool-season crops as soon as soil is workable",
+        "Set up trellises and supports early"
+      ],
+      "summer": [
+        "Water early morning to reduce evaporation",
+        "Harvest regularly to encourage production",
+        "Provide shade for heat-sensitive crops",
+        "Monitor for pests and diseases"
+      ],
+      "fall": [
+        "Plant cool-season crops for fall harvest",
+        "Harvest and preserve excess produce",
+        "Add compost to empty beds",
+        "Plan next year's garden layout"
+      ],
+      "winter": [
+        "Plan next season's garden",
+        "Order seeds early",
+        "Maintain compost piles",
+        "Protect perennial herbs and plants"
+      ]
+    }
+  },
+  "blogPosts": [
+    {
+      "id": 1,
+      "title": "Getting Started with Your First Garden",
+      "date": "2024-01-15",
+      "excerpt": "New to gardening? Start here with our beginner-friendly guide to growing your own food.",
+      "category": "Getting Started"
+    },
+    {
+      "id": 2,
+      "title": "The Benefits of Community Gardening",
+      "date": "2024-01-10",
+      "excerpt": "Discover how community gardens build connections, improve health, and strengthen neighborhoods.",
+      "category": "Community"
+    },
+    {
+      "id": 3,
+      "title": "Composting 101: Turn Waste into Gold",
+      "date": "2024-01-05",
+      "excerpt": "Learn the basics of composting and how to create nutrient-rich soil from kitchen scraps.",
+      "category": "Soil Health"
+    }
+  ],
+  "gallery": [
+    {
+      "id": 1,
+      "title": "Summer Harvest",
+      "description": "Fresh tomatoes, peppers, and herbs from our community garden",
+      "category": "Harvest"
+    },
+    {
+      "id": 2,
+      "title": "Volunteer Garden Day",
+      "description": "Community members working together to maintain the garden",
+      "category": "Community"
+    },
+    {
+      "id": 3,
+      "title": "Educational Workshop",
+      "description": "Teaching children about growing vegetables",
+      "category": "Education"
+    },
+    {
+      "id": 4,
+      "title": "Spring Planting",
+      "description": "Early season planting in raised beds",
+      "category": "Gardening"
+    }
+  ],
+  "_metadata": {
+    "notes": [
+      "Colors extracted from form: Spring green (#90EE90), Amber (#FFBF00), American Rose (#B8336A)",
+      "Theme: Rustic and Earthy - warm, welcoming, connected to nature",
+      "Logo/Branding: Needs to be designed - use placeholder for now",
+      "Inspiration: KCCG serves as a model for community impact",
+      "Interactive features should be clean, neat, and modern",
+      "Priority: Encouraging gardening and community sharing"
+    ],
+    "fictionalContent": [
+      "Contact information (email/phone) - fictional but realistic",
+      "Specific address details",
+      "Detailed program descriptions",
+      "Educational content examples",
+      "Blog post titles and excerpts",
+      "Gallery items"
+    ]
+  }
+}
+
