@@ -70,12 +70,12 @@ export default function Portfolio() {
             These photos capture just a glimpse of what you'll experience when you visit us
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="/visit" className="btn-primary inline-block">
+            <Link href="/visit" className="btn-primary inline-block">
               Plan Your Visit
-            </a>
-            <a href="/about" className="btn-outline inline-block">
+            </Link>
+            <Link href="/about" className="btn-outline inline-block">
               Learn More About Us
-            </a>
+            </Link>
           </div>
         </div>
       </section>

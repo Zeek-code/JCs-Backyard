@@ -5,7 +5,7 @@ const nextConfig = {
     unoptimized: true,
   },
   // For GitHub Pages project sites, set basePath:
-  // basePath: '/JCs-Backyard', // Commented out for local development
+  basePath: '/JCs-Backyard',
   // For GitHub Pages user/organization sites (username.github.io), set basePath to '' or omit
   trailingSlash: true,
 }
