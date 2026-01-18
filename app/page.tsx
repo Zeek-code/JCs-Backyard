@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative h-[80vh] min-h-[500px] flex items-center justify-center text-white">
+      <section id="hero-section" className="relative h-[80vh] min-h-[500px] flex items-center justify-center text-white">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-fixed"
           style={{
@@ -18,7 +18,7 @@ export default function Home() {
         </div>
         <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
           <h1 className="text-4xl md:text-6xl font-bold mb-6 font-serif">
-            {garden.name}
+            <span style={{ fontFamily: 'var(--font-dancing-script)' }}>JC's</span> Backyard
           </h1>
           <p className="text-xl md:text-2xl mb-8 font-light leading-relaxed">
             {garden.tagline}

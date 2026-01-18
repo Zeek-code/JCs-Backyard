@@ -8,8 +8,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: '#90EE90', // Spring Green
-        accent1: '#FFBF00', // Amber
+        primary: '#4CAF50', // Darker Green (between spring green and forest green)
+        accent1: '#D97706', // Dark Amber/Ember
         accent2: '#B8336A', // American Rose
         neutral: '#3D3D3D',
         neutralLight: '#F5F5DC',

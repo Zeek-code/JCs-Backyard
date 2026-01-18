@@ -6,6 +6,7 @@
   :root {
     --font-inter: 'Inter', system-ui, sans-serif;
     --font-merriweather: 'Merriweather', Georgia, serif;
+    --font-dancing-script: 'Dancing Script', cursive;
   }
 
   html {

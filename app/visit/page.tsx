@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: "Visit Us | JC's Backyard",
-  description: "Plan your visit to JC's Backyard. Find our location, hours, and learn about tours, workshops, and volunteer opportunities in Kansas City.",
+  description: "Plan your visit to JC's Backyard. Find our hours and learn about tours, workshops, and volunteer opportunities in Kansas City.",
 }
 
 export default function Visit() {
@@ -23,69 +23,37 @@ export default function Visit() {
         </div>
       </section>
 
-      {/* Location & Hours */}
+      {/* Hours */}
       <section className="section-container bg-white">
         <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-12">
-            {/* Location */}
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-neutral">
-                Location
-              </h2>
-              <div className="card">
-                <p className="text-lg mb-4 text-neutral/80">
-                  <strong>Address:</strong><br />
-                  {garden.location.fullAddress}
+          <div>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-neutral">
+              Hours
+            </h2>
+            <div className="card space-y-6">
+              <div>
+                <h3 className="text-xl font-bold mb-2 text-primary">
+                  Public Visiting Hours
+                </h3>
+                <p className="text-neutral/70">
+                  {garden.hours.public}
                 </p>
-                <p className="text-lg mb-4 text-neutral/80">
-                  <strong>Region:</strong><br />
-                  {garden.location.region}
-                </p>
-                <div className="mt-6">
-                  <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d49604.14147366106!2d-94.59836615!3d39.099726949999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87c0f75eafe99997%3A0x558525e66aaa51a2!2sKansas%20City%2C%20MO!5e0!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus"
-                    width="100%"
-                    height="300"
-                    style={{ border: 0 }}
-                    allowFullScreen
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                    className="rounded-lg"
-                  />
-                </div>
               </div>
-            </div>
-
-            {/* Hours */}
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-neutral">
-                Hours
-              </h2>
-              <div className="card space-y-6">
-                <div>
-                  <h3 className="text-xl font-bold mb-2 text-primary">
-                    Public Visiting Hours
-                  </h3>
-                  <p className="text-neutral/70">
-                    {garden.hours.public}
-                  </p>
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold mb-2 text-accent1">
-                    Volunteer Days
-                  </h3>
-                  <p className="text-neutral/70">
-                    {garden.hours.volunteer}
-                  </p>
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold mb-2 text-accent2">
-                    Guided Tours
-                  </h3>
-                  <p className="text-neutral/70">
-                    {garden.hours.tours}
-                  </p>
-                </div>
+              <div>
+                <h3 className="text-xl font-bold mb-2 text-accent1">
+                  Volunteer Days
+                </h3>
+                <p className="text-neutral/70">
+                  {garden.hours.volunteer}
+                </p>
+              </div>
+              <div>
+                <h3 className="text-xl font-bold mb-2 text-accent2">
+                  Guided Tours
+                </h3>
+                <p className="text-neutral/70">
+                  {garden.hours.tours}
+                </p>
               </div>
             </div>
           </div>

@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Inter, Merriweather } from 'next/font/google'
+import { Inter, Merriweather, Dancing_Script } from 'next/font/google'
 import './globals.css'
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
@@ -14,6 +14,12 @@ const merriweather = Merriweather({
   weight: ['300', '400', '700'],
   subsets: ['latin'],
   variable: '--font-merriweather',
+  display: 'swap',
+})
+
+const dancingScript = Dancing_Script({ 
+  subsets: ['latin'],
+  variable: '--font-dancing-script',
   display: 'swap',
 })
 
@@ -41,7 +47,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${merriweather.variable}`}>
+    <html lang="en" className={`${inter.variable} ${merriweather.variable} ${dancingScript.variable}`}>
       <body className="font-sans antialiased bg-neutralLight text-neutral">
         <Navigation />
         <main className="min-h-screen">
