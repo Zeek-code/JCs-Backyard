@@ -67,16 +67,26 @@ export default function Visit() {
         </h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {garden.programs.map((program, index) => (
-            <div key={index} className="card">
-              <h3 className="text-xl font-bold mb-3 text-primary">
-                {program.name}
-              </h3>
-              <p className="text-neutral/70 mb-4">
-                {program.description}
-              </p>
-              <p className="text-sm text-accent1 font-semibold">
-                {program.frequency}
-              </p>
+            <div key={index} className="card p-0 overflow-hidden group">
+              <div className="relative aspect-video overflow-hidden bg-neutralLight">
+                <img
+                  src={`https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=800&q=80&sig=${index + 50}`}
+                  alt={program.name}
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-bold mb-3 text-primary">
+                  {program.name}
+                </h3>
+                <p className="text-neutral/70 mb-4">
+                  {program.description}
+                </p>
+                <p className="text-sm text-accent1 font-semibold">
+                  {program.frequency}
+                </p>
+              </div>
             </div>
           ))}
         </div>

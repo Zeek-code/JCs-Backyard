@@ -59,6 +59,34 @@ export default function Navigation() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [isHomePage, heroHeight])
 
+  // Close mobile menu when pathname changes
+  useEffect(() => {
+    setIsOpen(false)
+  }, [pathname])
+
+  // Close mobile menu on escape key
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && isOpen) {
+        setIsOpen(false)
+      }
+    }
+    window.addEventListener('keydown', handleEscape)
+    return () => window.removeEventListener('keydown', handleEscape)
+  }, [isOpen])
+
+  // Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = 'unset'
+    }
+    return () => {
+      document.body.style.overflow = 'unset'
+    }
+  }, [isOpen])
+
   const navLinks = [
     { href: '/', label: 'Home' },
     { href: '/about', label: 'About Us' },
@@ -112,86 +140,128 @@ export default function Navigation() {
 
   const navStyle = getNavStyle()
 
+  // Check if link is active
+  const isActive = (href: string) => {
+    if (href === '/') {
+      return pathname === '/'
+    }
+    return pathname.startsWith(href)
+  }
+
   return (
-    <nav 
-      className="shadow-md z-50 transition-opacity duration-300"
-      style={{
-        ...navStyle,
-        backgroundColor: '#4CAF50', // Primary green (same as btn-primary)
-      }}
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          {/* Logo */}
-          <Link href="/" className="flex items-center">
-            <span className="text-2xl font-bold text-neutral">
-              <span style={{ fontFamily: 'var(--font-dancing-script)' }}>JC's</span> Backyard
-            </span>
-          </Link>
-
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex space-x-8">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="text-neutral hover:text-primary transition-colors duration-200 font-medium"
-              >
-                {link.label}
-              </Link>
-            ))}
-          </div>
-
-          {/* Mobile menu button */}
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden text-neutral hover:text-primary transition-colors duration-200"
-            aria-label="Toggle menu"
-          >
-            <svg
-              className="h-6 w-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              {isOpen ? (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              ) : (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              )}
-            </svg>
-          </button>
-        </div>
-      </div>
-
-      {/* Mobile Navigation */}
+    <>
+      {/* Backdrop overlay for mobile menu */}
       {isOpen && (
-        <div className="md:hidden border-t" style={{ backgroundColor: '#4CAF50' }}>
-          <div className="px-4 pt-2 pb-3 space-y-1">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                onClick={() => setIsOpen(false)}
-                className="block px-3 py-2 text-neutral hover:bg-primary/10 hover:text-primary rounded-md transition-colors duration-200"
+        <div
+          className="fixed inset-0 bg-black/50 z-40 md:hidden transition-opacity duration-300"
+          onClick={() => setIsOpen(false)}
+          aria-hidden="true"
+        />
+      )}
+
+      <nav 
+        className="shadow-md z-50 transition-opacity duration-300"
+        style={{
+          ...navStyle,
+          backgroundColor: '#4CAF50', // Primary green (same as btn-primary)
+        }}
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-16">
+            {/* Logo */}
+            <Link href="/" className="flex items-center">
+              <span className="text-2xl font-bold text-neutral">
+                <span style={{ fontFamily: 'var(--font-dancing-script)' }}>JC's</span> Backyard
+              </span>
+            </Link>
+
+            {/* Desktop Navigation */}
+            <div className="hidden md:flex space-x-8">
+              {navLinks.map((link) => {
+                const active = isActive(link.href)
+                return (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className={`transition-colors duration-200 font-medium relative py-2 ${
+                      active
+                        ? 'text-white font-semibold'
+                        : 'text-neutral hover:text-white'
+                    }`}
+                  >
+                    {link.label}
+                    {active && (
+                      <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-white rounded-full" />
+                    )}
+                  </Link>
+                )
+              })}
+            </div>
+
+            {/* Mobile menu button - larger touch target */}
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="md:hidden text-neutral hover:text-white transition-colors duration-200 p-2 -mr-2 min-w-[44px] min-h-[44px] flex items-center justify-center"
+              aria-label="Toggle menu"
+              aria-expanded={isOpen}
+            >
+              <svg
+                className="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
               >
-                {link.label}
-              </Link>
-            ))}
+                {isOpen ? (
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                ) : (
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
+                )}
+              </svg>
+            </button>
           </div>
         </div>
-      )}
-    </nav>
+
+        {/* Mobile Navigation - slide in animation */}
+        <div
+          className={`md:hidden border-t overflow-hidden transition-all duration-300 ease-in-out ${
+            isOpen
+              ? 'max-h-[600px] opacity-100'
+              : 'max-h-0 opacity-0'
+          }`}
+          style={{ backgroundColor: '#4CAF50' }}
+        >
+          <div className="px-4 pt-2 pb-4 space-y-1">
+            {navLinks.map((link) => {
+              const active = isActive(link.href)
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setIsOpen(false)}
+                  className={`block px-4 py-3 text-base rounded-md transition-all duration-200 min-h-[44px] flex items-center ${
+                    active
+                      ? 'bg-white/20 text-white font-semibold'
+                      : 'text-neutral hover:bg-white/10 hover:text-white'
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              )
+            })}
+          </div>
+        </div>
+      </nav>
+    </>
   )
 }
 
