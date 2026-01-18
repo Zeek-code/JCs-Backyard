@@ -4,9 +4,9 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  // For GitHub Pages project sites, uncomment and set basePath:
-  // basePath: '/JCs-Backyard',
-  // For GitHub Pages user/organization sites (username.github.io), leave basePath empty or omit
+  // For GitHub Pages project sites, set basePath:
+  basePath: '/JCs-Backyard',
+  // For GitHub Pages user/organization sites (username.github.io), set basePath to '' or omit
   trailingSlash: true,
 }
 

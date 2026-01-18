@@ -3,8 +3,15 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 
-export function generateMetadata({ params }: { params: { id: string } }): Metadata {
-  const post = gardenData.blogPosts.find(p => p.id === parseInt(params.id))
+export function generateStaticParams() {
+  return gardenData.blogPosts.map((post) => ({
+    id: post.id.toString(),
+  }))
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
+  const { id } = await params
+  const post = gardenData.blogPosts.find(p => p.id === parseInt(id))
   
   if (!post) {
     return {
@@ -18,8 +25,9 @@ export function generateMetadata({ params }: { params: { id: string } }): Metada
   }
 }
 
-export default function BlogPost({ params }: { params: { id: string } }) {
-  const post = gardenData.blogPosts.find(p => p.id === parseInt(params.id))
+export default async function BlogPost({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params
+  const post = gardenData.blogPosts.find(p => p.id === parseInt(id))
 
   if (!post) {
     notFound()
