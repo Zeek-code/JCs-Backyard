@@ -1,5 +1,6 @@
-import gardenData from '@/garden_data.json'
+import Link from 'next/link'
 import type { Metadata } from 'next'
+import { albums, getImagePath } from './albums'
 
 export const metadata: Metadata = {
   title: "Portfolio & Gallery | JC's Backyard",
@@ -7,16 +8,6 @@ export const metadata: Metadata = {
 }
 
 export default function Portfolio() {
-  const { gallery } = gardenData
-
-  // Placeholder image URLs from Unsplash
-  const imageUrls = [
-    'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=800&q=80',
-    'https://images.unsplash.com/photo-1464207687429-7505649dae38?w=800&q=80',
-    'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=800&q=80',
-    'https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=800&q=80',
-  ]
-
   return (
     <>
       {/* Hero Section */}
@@ -31,32 +22,41 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* Gallery Grid */}
-      <section className="section-container bg-white">
+      {/* Album Grid */}
+      <section className="section-container bg-white py-12">
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {gallery.map((item, index) => (
-            <div key={item.id} className="card p-0 overflow-hidden group">
-              <div className="relative aspect-square overflow-hidden">
-                <img
-                  src={imageUrls[index % imageUrls.length]}
-                  alt={item.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              </div>
-              <div className="p-6">
-                <span className="inline-block bg-primary/20 text-primary text-xs font-semibold px-2 py-1 rounded mb-2">
-                  {item.category}
-                </span>
-                <h3 className="text-xl font-bold mb-2 text-neutral">
-                  {item.title}
-                </h3>
-                <p className="text-neutral/70 text-sm">
-                  {item.description}
-                </p>
-              </div>
-            </div>
-          ))}
+          {albums.map((album) => {
+            const coverImagePath = getImagePath(album.name, album.coverImage || album.images[0])
+            return (
+              <Link 
+                key={album.slug}
+                href={`/portfolio/${album.slug}`}
+                className="card p-0 overflow-hidden group block"
+              >
+                <div className="relative aspect-square overflow-hidden">
+                  <img
+                    src={coverImagePath}
+                    alt={album.name}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute bottom-0 left-0 right-0 p-6 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <span className="text-sm font-medium">
+                      {album.images.length} {album.images.length === 1 ? 'photo' : 'photos'}
+                    </span>
+                  </div>
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-bold mb-2 text-neutral">
+                    {album.name}
+                  </h3>
+                  <p className="text-neutral/70 text-sm">
+                    View album →
+                  </p>
+                </div>
+              </Link>
+            )
+          })}
         </div>
       </section>
 
